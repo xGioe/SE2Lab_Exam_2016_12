@@ -74,7 +74,7 @@ paths:
           description: no students with that ID or SSN
             
   /searchByMark:
-    get:
+    post:
       summary: return students that match a criteria
       description: it returns a list of students that match a criteria
       parameters:
