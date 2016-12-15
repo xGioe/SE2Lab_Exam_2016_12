@@ -75,12 +75,12 @@ paths:
             
   /searchByMark:
     post:
-      summary: return students that match a criteria
-      description: it returns a list of students that match a criteria
+      summary: return students that match a mark
+      description: it returns a list of students that match a mark
       parameters:
-        - name: criteria
+        - name: mark
           in: formData
-          description: criteria to be matched
+          description: mark to be matched
           required: true
           type: string
       responses:
