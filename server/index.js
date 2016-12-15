@@ -304,15 +304,15 @@ app.post(function(request,reponse)){
 		var students = [];
 		
 		//if insertion works correctly
-		if (studentManager.serachByCriteria(criteria_value))
+		if (studentManager.searchByMark(criteria_value).length !== 0)
 		{
 			response.writeHead(200, headers);
 			response.end(JSON.stringify(students));
 		}
 		else
 		{
-			response.writeHead(400, headers);
-			response.end(JSON.stringify("Something went wrong"));
+			response.writeHead(404, headers);
+			response.end(JSON.stringify("No users found"));
 		}
 
 	}

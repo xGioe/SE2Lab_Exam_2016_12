@@ -139,7 +139,7 @@ var insertStudent = function insertStudent(student)
  * @param criteria
  * @return list of students with matched criteria
  */
-var serachByCriteria = function serachByCriteria(criteria){
+var searchByMark = function searchByMark(criteria){
 	var comparator = criteria[0];
 	var value = criteria[1];
 	var res = [];		
