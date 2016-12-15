@@ -134,6 +134,11 @@ var insertStudent = function insertStudent(student)
 }
 
 //AGGIUNGERE QUI SOTTO NUOVE FUNZIONI
+/**
+ * @brief This function search for a student's mark that respect the given criteria
+ * @param criteria
+ * @return list of students with matched criteria
+ */
 var serachByCriteria = function serachByCriteria(criteria){
 	var comparator = criteria[0];
 	var value = criteria[1];

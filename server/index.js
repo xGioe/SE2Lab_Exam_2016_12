@@ -267,6 +267,66 @@ app.post('/addStudent', function(request, response)
 
 });
 
+/**
+ * @brief get a criteria and return all student with a mark that matches the specified criteria
+ * @return all student with a mark that matches the specified criteria
+ */
+app.post(function(request,reponse)){
+	var headers = {};
+	headers["Access-Control-Allow-Origin"] = "*";
+	headers["Access-Control-Allow-Methods"] = "POST, GET, PUT, DELETE, OPTIONS";
+	headers["Access-Control-Allow-Credentials"] = false;
+	headers["Access-Control-Max-Age"] = '86400'; // 24 hours
+	headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept";
+	headers["Content-Type"] = "application/json";
+
+	var criteria_value;
+		 
+	//check body and parameters
+	if ( typeof request.body !== 'undefined' && request.body)
+	{
+		if ( typeof request.body.criteria_value !== 'undefined' && typeof request.body.criteria_value === 'string')
+            {
+			 criteria_value = request.body.criteria_value;
+            }
+		else 
+			criteria_value = "not defined";
+	}
+	else
+	{
+		criteria_value = "body undefined";
+	}
+    
+    if (criteria_value!="not defined" && criteria_value!="body undefined")
+	{
+		//aceptable input
+		//create the student object
+		var students = [];
+		
+		//if insertion works correctly
+		if (studentManager.serachByCriteria(criteria_value))
+		{
+			response.writeHead(200, headers);
+			response.end(JSON.stringify(students));
+		}
+		else
+		{
+			response.writeHead(400, headers);
+			response.end(JSON.stringify("Something went wrong"));
+		}
+
+	}
+    else    
+	{
+		//unaceptable input
+		response.writeHead(406, headers);
+		response.end(JSON.stringify("Input not correct"));
+	}   
+		
+		
+
+	}
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
