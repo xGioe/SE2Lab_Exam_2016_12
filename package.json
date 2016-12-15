@@ -1,0 +1,19 @@
+{
+  "name": "se2lab-exam-2016-12",
+  "version": "1.0.0",
+  "description": "sweng2-exam",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xGioe/SE2Lab_Exam_2016_12.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xGioe/SE2Lab_Exam_2016_12/issues"
+  },
+  "homepage": "https://github.com/xGioe/SE2Lab_Exam_2016_12#readme"
+}
