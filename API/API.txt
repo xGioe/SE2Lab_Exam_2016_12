@@ -90,6 +90,10 @@ paths:
             type: array
             items:
               $ref: "#/definitions/student"
+        404:
+          description: No users were found
+        406:
+          description: Body of the request is not correct
           
 definitions:
   student:
