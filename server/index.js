@@ -268,8 +268,8 @@ app.post('/addStudent', function(request, response)
 });
 
 /**
- * @brief get a criteria and return all student with a mark that matches the specified criteria
- * @return all student with a mark that matches the specified criteria
+ * @brief get a mark and return all student with a mark that matches the specified mark
+ * @return all student with a mark that matches the specified mark
  */
 app.post(function(request,reponse)){
 	var headers = {};
@@ -280,31 +280,31 @@ app.post(function(request,reponse)){
 	headers["Access-Control-Allow-Headers"] = "X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept";
 	headers["Content-Type"] = "application/json";
 
-	var criteria_value;
+	var mark_value;
 		 
 	//check body and parameters
 	if ( typeof request.body !== 'undefined' && request.body)
 	{
-		if ( typeof request.body.criteria_value !== 'undefined' && typeof request.body.criteria_value === 'string')
+		if ( typeof request.body.mark_value !== 'undefined' && typeof request.body.mark_value === 'string')
             {
-			 criteria_value = request.body.criteria_value;
+			 mark_value = request.body.mark_value;
             }
 		else 
-			criteria_value = "not defined";
+			mark_value = "not defined";
 	}
 	else
 	{
-		criteria_value = "body undefined";
+		mark_value = "body undefined";
 	}
     
-    if (criteria_value!="not defined" && criteria_value!="body undefined")
+    if (mark_value!="not defined" && mark_value!="body undefined")
 	{
 		//aceptable input
 		//create the student object
 		var students = [];
 		
 		//if insertion works correctly
-		if (studentManager.searchByMark(criteria_value).length !== 0)
+		if (studentManager.searchByMark(mark_value).length !== 0)
 		{
 			response.writeHead(200, headers);
 			response.end(JSON.stringify(students));

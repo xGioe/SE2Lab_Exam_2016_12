@@ -135,13 +135,13 @@ var insertStudent = function insertStudent(student)
 
 //AGGIUNGERE QUI SOTTO NUOVE FUNZIONI
 /**
- * @brief This function search for a student's mark that respect the given criteria
+ * @brief This function search for a student's mark that respect the given mark
  * @param criteria
- * @return list of students with matched criteria
+ * @return list of students with matched mark
  */
-var searchByMark = function searchByMark(criteria){
-	var comparator = criteria[0];
-	var value = criteria[1];
+var searchByMark = function searchByMark(mark){
+	var comparator = mark[0];
+	var value = mark[1];
 	var res = [];		
 	for (var i=0; i < studentList.length; i++) {
 		if (criteria == "<") {
@@ -167,3 +167,4 @@ exports.deleteStudentID = deleteStudentID;
 exports.deleteStudentSSN = deleteStudentSSN; 
 exports.insertStudent = insertStudent;  
 exports.getList = getList; 
+exports.searchByMark = searchByMark;
