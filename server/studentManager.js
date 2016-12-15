@@ -134,6 +134,24 @@ var insertStudent = function insertStudent(student)
 }
 
 //AGGIUNGERE QUI SOTTO NUOVE FUNZIONI
+var serachByCriteria = function serachByCriteria(criteria){
+	var comparator = criteria[0];
+	var value = criteria[1];
+	var res = [];		
+	for (var i=0; i < studentList.length; i++) {
+		if (criteria == "<") {
+			if (studentList[i].mark < value) {
+				res.push(studentList[i]);
+			}
+		} else (criteria == ">") {
+			if (studentList[i].mark > value) {
+				res.push(studentList[i]);
+			}
+		}
+	}
+	return res;
+}
+
 
 
 
